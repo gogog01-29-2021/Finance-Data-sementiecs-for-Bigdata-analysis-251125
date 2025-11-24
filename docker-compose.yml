@@ -103,6 +103,52 @@ services:
       - cassandra
     restart: unless-stopped
 
+  # Data Collector - Stage 1: Collects orderbook data and Reddit sentiment
+  data-collector:
+    build:
+      context: .
+      dockerfile: Dockerfile.collector
+    container_name: data-collector
+    depends_on:
+      - questdb
+    volumes:
+      - ./main.py:/app/main.py
+      - ./websocket3.py:/app/websocket3.py
+      - ./reddit_sentiment.py:/app/reddit_sentiment.py
+      - ./data/reddit:/app/data/reddit
+      - ./.env:/app/.env
+    environment:
+      - QUESTDB_HOST=questdb
+      - QUESTDB_PORT=9009
+      - QUESTDB_HTTP_PORT=9000
+      - SKIP_ANALYTICS=true
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - default
+    command: >
+      bash -c "
+        echo '==================================================';
+        echo 'DATA COLLECTOR - STAGE 1';
+        echo '==================================================';
+        echo 'Waiting for QuestDB to be ready...';
+        sleep 30;
+
+        until curl -s http://questdb:9000/exec?query=SELECT%201 > /dev/null 2>&1; do
+          echo '  QuestDB not ready, waiting 10s...';
+          sleep 10;
+        done;
+        echo '  ✓ QuestDB ready';
+
+        echo '==================================================';
+        echo 'Starting data collection...';
+        echo '  - Crypto/Stock orderbook streaming';
+        echo '  - Reddit sentiment collection';
+        echo '==================================================';
+
+        python /app/main.py
+      "
+
   # Spark Analytics - Automated analytics pipeline with word-level text analysis
   spark-analytics:
     build:
@@ -114,10 +160,12 @@ services:
       - cassandra
       - mongodb
       - neo4j
+      - data-collector
     volumes:
       - ./spark_analytics.py:/app/spark_analytics.py
       - ./neo4j_graph_writer.py:/app/neo4j_graph_writer.py
       - ./create_cassandra_table.py:/app/create_cassandra_table.py
+      - ./advanced_cross_analytics.py:/app/advanced_cross_analytics.py
       - ./data/reddit:/app/data/reddit
       - ./.env:/app/.env
     environment:

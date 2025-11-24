@@ -1,0 +1,29 @@
+# Enhanced Semantic Analytics Requirements
+
+# Existing requirements
+pyspark==3.5.0
+python-dotenv==1.0.0
+lmdb==1.5.1
+cassandra-driver==3.29.2
+pymongo==4.6.1
+neo4j==5.16.0
+pandas==2.1.0
+numpy==1.24.0
+
+# NEW: Enhanced NLP and Text Processing
+textblob==0.17.1
+
+# NEW: Visualization
+matplotlib==3.8.0
+seaborn==0.13.0
+plotly==5.18.0
+
+# NEW: Data fetching
+aiohttp==3.9.1
+websockets==12.0
+
+# NEW: QuestDB connector
+questdb==1.1.0
+
+# Utilities
+requests==2.31.0

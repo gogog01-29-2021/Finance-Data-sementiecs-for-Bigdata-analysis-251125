@@ -33,6 +33,11 @@ FMP_BASE = "https://financialmodelingprep.com/api/v3"
 STOCK_SYMBOLS = ["TSLA", "NVDA", "GOOGL", "PLTR", "AAPL", "SPY", "QQQ"]
 STOCK_POLL_INTERVAL = int(os.getenv("STOCK_POLL_INTERVAL", "5"))
 
+# QuestDB Configuration (supports Docker)
+QUESTDB_HOST = os.getenv("QUESTDB_HOST", "localhost")
+QUESTDB_HTTP_PORT = os.getenv("QUESTDB_HTTP_PORT", "9000")
+QUESTDB_CONF = f"http::addr={QUESTDB_HOST}:{QUESTDB_HTTP_PORT};"
+
 # Crypto assets
 CRYPTO_ASSETS = ["BTC", "ETH", "SOL", "XRP", "ADA", "DOGE"]
 
@@ -744,12 +749,15 @@ async def batcher(src_q: asyncio.Queue, dst_q: asyncio.Queue,
 
 
 async def questdb_consumer(batch_q: asyncio.Queue,
-                          conf: str = "http::addr=localhost:9000;"):
+                          conf: str = None):
     """
     Write to QuestDB with proper schema
     - venue_type='SPOT' for crypto
     - venue_type='STOCK' for stocks
     """
+    if conf is None:
+        conf = QUESTDB_CONF
+
     def _ns(sec: float) -> int:
         return int(sec * 1_000_000_000)
 
@@ -941,7 +949,7 @@ async def main():
     print(f"STOCK Source: Financial Modeling Prep API")
     print(f"STOCK Poll Interval: {STOCK_POLL_INTERVAL}s")
     print(f"\nOutput File: {OUTPUT_FILE}")
-    print("QuestDB: http://localhost:9000")
+    print(f"QuestDB: http://{QUESTDB_HOST}:{QUESTDB_HTTP_PORT}")
     print("=" * 80)
 
     try:

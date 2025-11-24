@@ -1,0 +1,22 @@
+# Dashboard Dependencies for 3-Stage Analytics Pipeline
+# Install with: pip install -r dashboard_requirements.txt
+
+# Core dashboard framework
+streamlit>=1.28.0
+
+# Data manipulation
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Database connectors
+lmdb>=1.4.1                    # Stage 1: LMDB (Reddit, Twitter, On-Chain)
+psycopg2-binary>=2.9.9         # Stage 1: QuestDB (PostgreSQL protocol)
+cassandra-driver>=3.28.0       # Stage 3: Cassandra (enriched analytics)
+neo4j>=5.14.0                  # Stage 3: Neo4j (graph relationships)
+pymongo>=4.6.0                 # Stage 3: MongoDB (document analytics)
+
+# Visualization
+plotly>=5.17.0
+
+# Utilities
+python-dotenv>=1.0.0           # Environment variables

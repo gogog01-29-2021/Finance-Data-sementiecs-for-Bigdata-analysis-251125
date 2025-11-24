@@ -66,6 +66,11 @@ class PipelineOrchestrator:
 
     async def run_analytics_periodic(self):
         """Run PySpark analytics periodically"""
+        # Skip analytics if running in Docker (handled by spark-analytics container)
+        if os.getenv("SKIP_ANALYTICS", "false").lower() == "true":
+            print("[main] Analytics skipped (running in Docker, handled by spark-analytics container)")
+            return
+
         print(f"[main] Starting analytics (runs every {self.analytics_interval}s)...")
 
         while self.running:

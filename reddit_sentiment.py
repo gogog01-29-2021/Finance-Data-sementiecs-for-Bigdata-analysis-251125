@@ -66,23 +66,43 @@ REDDIT_BASE = "https://www.reddit.com"
 
 
 class SentimentAnalyzer:
-    """Simple sentiment analyzer using TextBlob"""
+    """Enhanced sentiment analyzer with entity extraction and topic detection"""
+
+    # Common crypto symbols to look for
+    CRYPTO_SYMBOLS = {
+        'bitcoin': 'BTC', 'btc': 'BTC',
+        'ethereum': 'ETH', 'eth': 'ETH',
+        'solana': 'SOL', 'sol': 'SOL',
+        'ripple': 'XRP', 'xrp': 'XRP',
+        'cardano': 'ADA', 'ada': 'ADA',
+        'dogecoin': 'DOGE', 'doge': 'DOGE'
+    }
 
     @staticmethod
     def analyze(text: str) -> Dict:
         """
-        Analyze sentiment of text
+        Enhanced sentiment analysis with semantic features
         Returns: {
             'polarity': float (-1 to 1, negative to positive),
             'subjectivity': float (0 to 1, objective to subjective),
-            'label': str ('positive', 'negative', 'neutral')
+            'label': str ('positive', 'negative', 'neutral'),
+            'entities': dict - crypto mentions {'BTC': 3, 'ETH': 1},
+            'entity_count': int,
+            'topics': list - detected topics,
+            'has_price_prediction': bool,
+            'urgency_score': float
         }
         """
         if not text:
             return {
                 "polarity": 0.0,
                 "subjectivity": 0.0,
-                "label": "neutral"
+                "label": "neutral",
+                "entities": {},
+                "entity_count": 0,
+                "topics": [],
+                "has_price_prediction": False,
+                "urgency_score": 0.0
             }
 
         blob = TextBlob(text)
@@ -97,11 +117,102 @@ class SentimentAnalyzer:
         else:
             label = "neutral"
 
+        # NEW: Extract crypto entities
+        entities = SentimentAnalyzer._extract_crypto_entities(text)
+
+        # NEW: Detect topics
+        topics = SentimentAnalyzer._detect_topics(text)
+
+        # NEW: Detect price predictions
+        has_prediction = SentimentAnalyzer._has_price_prediction(text)
+
+        # NEW: Compute urgency
+        urgency = SentimentAnalyzer._compute_urgency(text)
+
         return {
             "polarity": polarity,
             "subjectivity": subjectivity,
-            "label": label
+            "label": label,
+            "entities": entities,
+            "entity_count": len(entities),
+            "topics": topics,
+            "has_price_prediction": has_prediction,
+            "urgency_score": urgency
         }
+
+    @staticmethod
+    def _extract_crypto_entities(text: str) -> Dict:
+        """Extract cryptocurrency mentions and count them"""
+        import re
+        text_lower = text.lower()
+        entities = {}
+
+        # Look for $SYMBOL pattern
+        dollar_mentions = re.findall(r'\$([A-Z]{2,5})\b', text)
+        for symbol in dollar_mentions:
+            entities[symbol] = entities.get(symbol, 0) + 1
+
+        # Look for coin names
+        for coin_name, symbol in SentimentAnalyzer.CRYPTO_SYMBOLS.items():
+            count = len(re.findall(r'\b' + coin_name + r'\b', text_lower))
+            if count > 0:
+                entities[symbol] = entities.get(symbol, 0) + count
+
+        return entities
+
+    @staticmethod
+    def _detect_topics(text: str) -> list:
+        """Detect crypto-related topics/themes"""
+        topics = []
+        text_lower = text.lower()
+
+        if any(word in text_lower for word in ['moon', 'pump', 'bullish', 'up', 'breakout', 'rally']):
+            topics.append('bullish')
+        if any(word in text_lower for word in ['crash', 'dump', 'bearish', 'down', 'sell', 'drop']):
+            topics.append('bearish')
+        if any(word in text_lower for word in ['support', 'resistance', 'pattern', 'chart', 'analysis']):
+            topics.append('technical_analysis')
+        if any(word in text_lower for word in ['sec', 'regulation', 'ban', 'government', 'law']):
+            topics.append('regulation')
+        if any(word in text_lower for word in ['hodl', 'hold', 'accumulate', 'dca', 'long-term']):
+            topics.append('long_term')
+        if any(word in text_lower for word in ['fomo', 'last chance', 'dont miss', 'hurry', 'now']):
+            topics.append('fomo')
+
+        return topics
+
+    @staticmethod
+    def _has_price_prediction(text: str) -> bool:
+        """Detect if text contains price predictions"""
+        import re
+        text_lower = text.lower()
+
+        predictive_words = [
+            'will', 'going to', 'expect', 'predict', 'target',
+            'could reach', 'might hit', 'heading to', 'next stop'
+        ]
+
+        has_price = bool(re.search(r'\$\d+|\d+k', text, re.IGNORECASE))
+        return has_price and any(word in text_lower for word in predictive_words)
+
+    @staticmethod
+    def _compute_urgency(text: str) -> float:
+        """Compute urgency/FOMO score (0-1)"""
+        text_lower = text.lower()
+
+        urgency_words = [
+            ('!!!', 0.3), ('🚀', 0.2), ('💎', 0.15), ('🔥', 0.15),
+            ('now', 0.1), ('urgent', 0.2), ('immediately', 0.2),
+            ('fomo', 0.2), ('last chance', 0.3), ('dont miss', 0.25),
+            ('breaking', 0.15), ('alert', 0.15)
+        ]
+
+        score = 0.0
+        for word, weight in urgency_words:
+            if word in text_lower:
+                score += weight
+
+        return min(score, 1.0)
 
 
 class KeyValueStore:
