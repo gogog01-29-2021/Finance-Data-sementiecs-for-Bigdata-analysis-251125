@@ -1,0 +1,29 @@
+# Core async dependencies
+aiohttp>=3.8.0
+websockets>=11.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Database clients
+questdb>=1.0.2
+lmdb>=1.7.0  # Windows-compatible key-value store (replaces RocksDB)
+# python-rocksdb>=0.7.0  # Commented out - doesn't build on Windows
+# plyvel>=0.9  # LevelDB - optional, doesn't build on Windows either
+cassandra-driver>=3.25.0
+pymongo>=4.3.3
+neo4j>=5.8.0
+
+# PySpark and connectors
+pyspark>=3.4.0
+
+# PostgreSQL JDBC driver (for PySpark to connect to QuestDB)
+# Note: This will be loaded via spark.jars.packages in spark_analytics.py
+
+# Analytics and NLP
+textblob>=0.17.1
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Utilities
+python-dateutil>=2.8.2

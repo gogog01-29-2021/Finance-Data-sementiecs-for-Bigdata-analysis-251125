@@ -1,0 +1,511 @@
+:: loading settings :: url = jar:file:/C:/Users/user/miniconda3/envs/spark_py311/Lib/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: C:\Users\user\.ivy2\cache
+The jars for the packages stored in: C:\Users\user\.ivy2\jars
+org.postgresql#postgresql added as a dependency
+com.datastax.spark#spark-cassandra-connector_2.12 added as a dependency
+org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-c71144ee-a2cc-4e93-924f-3db48b1c0ab5;1.0
+	confs: [default]
+	found org.postgresql#postgresql;42.5.0 in central
+	found org.checkerframework#checker-qual;3.5.0 in central
+	found com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 in central
+	found com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 in central
+	found com.datastax.oss#java-driver-core-shaded;4.13.0 in central
+	found com.datastax.oss#native-protocol;1.5.0 in central
+	found com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 in central
+	found com.typesafe#config;1.4.1 in central
+	found org.slf4j#slf4j-api;1.7.26 in central
+	found io.dropwizard.metrics#metrics-core;4.1.18 in central
+	found org.hdrhistogram#HdrHistogram;2.1.12 in central
+	found org.reactivestreams#reactive-streams;1.0.3 in central
+	found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+	found com.github.spotbugs#spotbugs-annotations;3.1.12 in central
+	found com.google.code.findbugs#jsr305;3.0.2 in central
+	found com.datastax.oss#java-driver-mapper-runtime;4.13.0 in central
+	found com.datastax.oss#java-driver-query-builder;4.13.0 in central
+	found org.apache.commons#commons-lang3;3.10 in central
+	found com.thoughtworks.paranamer#paranamer;2.8 in central
+	found org.scala-lang#scala-reflect;2.12.11 in central
+	found org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 in central
+	found org.mongodb#mongodb-driver-sync;4.8.2 in central
+	[4.8.2] org.mongodb#mongodb-driver-sync;[4.8.1,4.8.99)
+	found org.mongodb#bson;4.8.2 in central
+	found org.mongodb#mongodb-driver-core;4.8.2 in central
+	found org.mongodb#bson-record-codec;4.8.2 in central
+:: resolution report :: resolve 2979ms :: artifacts dl 495ms
+	:: modules in use:
+	com.datastax.oss#java-driver-core-shaded;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-mapper-runtime;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-query-builder;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 from central in [default]
+	com.datastax.oss#native-protocol;1.5.0 from central in [default]
+	com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 from central in [default]
+	com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 from central in [default]
+	com.github.spotbugs#spotbugs-annotations;3.1.12 from central in [default]
+	com.github.stephenc.jcip#jcip-annotations;1.0-1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from central in [default]
+	com.thoughtworks.paranamer#paranamer;2.8 from central in [default]
+	com.typesafe#config;1.4.1 from central in [default]
+	io.dropwizard.metrics#metrics-core;4.1.18 from central in [default]
+	org.apache.commons#commons-lang3;3.10 from central in [default]
+	org.checkerframework#checker-qual;3.5.0 from central in [default]
+	org.hdrhistogram#HdrHistogram;2.1.12 from central in [default]
+	org.mongodb#bson;4.8.2 from central in [default]
+	org.mongodb#bson-record-codec;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-core;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-sync;4.8.2 from central in [default]
+	org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 from central in [default]
+	org.postgresql#postgresql;42.5.0 from central in [default]
+	org.reactivestreams#reactive-streams;1.0.3 from central in [default]
+	org.scala-lang#scala-reflect;2.12.11 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 from central in [default]
+	org.slf4j#slf4j-api;1.7.26 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   26  |   1   |   0   |   0   ||   26  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-c71144ee-a2cc-4e93-924f-3db48b1c0ab5
+	confs: [default]
+	0 artifacts copied, 26 already retrieved (0kB/84ms)
+25/11/21 10:51:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 6:>                                                          (0 + 2) / 2][Stage 6:=============================>                             (1 + 1) / 2]                                                                                [Stage 9:>                  (0 + 1) / 1][Stage 10:>                 (0 + 1) / 1][Stage 12:>                 (0 + 2) / 2][Stage 14:>                 (0 + 0) / 2][Stage 12:=========>        (1 + 1) / 2][Stage 14:>                 (0 + 1) / 2][Stage 14:>                                                         (0 + 2) / 2]                                                                                [Stage 14:=============================>                            (1 + 1) / 2]                                                                                [Stage 25:>                 (0 + 2) / 2][Stage 26:>                 (0 + 0) / 1][Stage 25:=========>        (1 + 1) / 2][Stage 26:>                 (0 + 1) / 1][Stage 26:>                                                         (0 + 1) / 1]                                                                                [Stage 26:>                                                         (0 + 1) / 1]                                                                                [Stage 38:>                                                         (0 + 1) / 1]                                                                                [Stage 44:>                                                         (0 + 1) / 1]                                                                                [Stage 50:>                                                         (0 + 1) / 1]                                                                                [Stage 56:>                 (0 + 1) / 1][Stage 57:>                 (0 + 1) / 1]                                                                                [Stage 61:>                                                         (0 + 2) / 2]                                                                                [Stage 65:>                 (0 + 1) / 1][Stage 66:>                 (0 + 1) / 1]                                                                                [Stage 74:>                                                         (0 + 1) / 1]                                                                                [Stage 80:>                                                         (0 + 2) / 2][Stage 80:=============================>                            (1 + 1) / 2]                                                                                [Stage 90:>                 (0 + 2) / 2][Stage 91:>                 (0 + 0) / 1][Stage 90:=========>        (1 + 1) / 2][Stage 91:>                 (0 + 1) / 1][Stage 91:>                                                         (0 + 1) / 1]                                                                                [Stage 91:>                                                         (0 + 1) / 1]                                                                                [Stage 103:>                                                        (0 + 1) / 1]                                                                                [Stage 116:>                                                        (0 + 1) / 1]                                                                                [Stage 131:>                                                        (0 + 1) / 1]                                                                                [Stage 146:>                                                        (0 + 1) / 1]                                                                                [Stage 161:>                                                        (0 + 1) / 1]                                                                                [Stage 176:>                                                        (0 + 1) / 1]                                                                                [Stage 191:>                                                        (0 + 1) / 1]                                                                                [Stage 206:>                                                        (0 + 1) / 1]                                                                                [Stage 221:>                                                        (0 + 1) / 1]                                                                                [Stage 236:>                                                        (0 + 1) / 1]                                                                                [Stage 251:>                                                        (0 + 1) / 1]                                                                                [Stage 266:>                                                        (0 + 1) / 1]                                                                                [Stage 281:>                                                        (0 + 1) / 1][Stage 281:=========================================================(1 + 0) / 1]                                                                                [Stage 296:>                                                        (0 + 1) / 1]                                                                                [Stage 311:>                                                        (0 + 1) / 1]                                                                                [Stage 326:>                                                        (0 + 1) / 1]                                                                                [Stage 341:>                                                        (0 + 2) / 2][Stage 341:============================>                            (1 + 1) / 2]                                                                                [Stage 344:>                                                        (0 + 2) / 2][Stage 344:============================>                            (1 + 1) / 2]                                                                                [Stage 350:>                (0 + 2) / 2][Stage 351:>                (0 + 0) / 1][Stage 350:========>        (1 + 1) / 2][Stage 351:>                (0 + 1) / 1][Stage 351:>                                                        (0 + 1) / 1]                                                                                [Stage 351:>                                                        (0 + 1) / 1]                                                                                [Stage 366:>                                                        (0 + 2) / 2][Stage 366:============================>                            (1 + 1) / 2]                                                                                25/11/21 10:54:29 WARN ControlConnection: [s0] Error connecting to Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7), trying next node (DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms)
+25/11/21 10:54:34 WARN ControlConnection: [s0] Error connecting to Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f), trying next node (DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms)
+================================================================================
+ENHANCED PYSPARK ANALYTICS PIPELINE STARTED
+================================================================================
+[spark] Initializing Spark session...
+[spark] Spark session initialized
+
+[1] Reading data sources...
+[spark] Reading orderbook data from QuestDB...
+[spark] Loaded 1761117 orderbook records
+[spark] Reading sentiment data from LMDB...
+[spark] Loaded 1617 sentiment records from LMDB
+Loaded 1761117 orderbook records
+Loaded 1617 sentiment records
+
+================================================================================
+A) ORIGINAL ANALYTICS (IMPROVED)
+================================================================================
+
+[A1] Arbitrage detection (threshold: 50 bps)...
+[spark] Detecting arbitrage opportunities...
+[spark] Found 3 arbitrage opportunities
+
+[A2] Sentiment-price correlation...
+[spark] Correlating sentiment with price movements...
+[spark] Generated 0 sentiment-price correlation records
+
+[A3] Price prediction (24h window)...
+[spark] Predicting price movements...
+[spark] Generated 0 price predictions
+
+================================================================================
+B) VOLUME & LIQUIDITY ANALYTICS
+================================================================================
+
+[B1] Order depth analysis...
+[spark] Analyzing order book depth...
+[spark] Generated 139 order depth records
+
+[B2] VWAP calculation...
+[spark] Calculating VWAP...
+[spark] Generated 139 VWAP records
+
+[B3] Bid-ask imbalance...
+[spark] Analyzing bid-ask imbalance...
+[spark] Generated 139 bid-ask imbalance records
+
+================================================================================
+C) VOLATILITY & PATTERN DETECTION
+================================================================================
+
+[C1] Rolling volatility (1h, 4h, 24h)...
+[spark] Calculating rolling volatility...
+[spark] Generated 31 volatility records
+
+[C2] Bollinger Bands...
+[spark] Calculating Bollinger Bands...
+[spark] Generated 31 Bollinger Bands records
+
+[C3] Flash event detection...
+[spark] Detecting flash events...
+[spark] Detected 1 flash events
+
+================================================================================
+D) ENHANCED SENTIMENT ANALYTICS
+================================================================================
+
+[D1] Sentiment momentum...
+[spark] Analyzing sentiment momentum...
+[spark] Generated 53 sentiment momentum records
+
+[D2] Sentiment-price divergence...
+[spark] Detecting sentiment-price divergence...
+[spark] Detected 0 sentiment-price divergences
+
+================================================================================
+E) CROSS-ASSET ANALYTICS
+================================================================================
+
+[E1] Correlation matrix...
+[spark] Calculating correlation matrix...
+[spark] Generated 15 correlation pairs
+
+================================================================================
+F) TEXT CONTENT ANALYTICS (Word-Level Analysis)
+================================================================================
+
+[F1] Word frequency analysis...
+[spark] Analyzing word frequency and content...
+[spark] Generated 6645 word frequency records
+
+[F2] Word-price correlation...
+[spark] Correlating word trends with price movements...
+[spark] Generated 0 word-price correlation signals
+
+[F3] Word-sentiment distribution...
+[spark] Analyzing word-sentiment distribution...
+[spark] Generated 1737 word-sentiment distribution records
+
+================================================================================
+WRITING TO DATABASES
+================================================================================
+
+[Cassandra] Writing all analytics to UNIFIED table...
+[spark] Writing arbitrage to unified Cassandra table...
+
+[ERROR] Pipeline failed: An error occurred while calling o1712.save.
+: java.io.IOException: Failed to open native connection to Cassandra at {localhost:9042} :: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:173)
+	at com.datastax.spark.connector.cql.CassandraConnector$.$anonfun$sessionCache$1(CassandraConnector.scala:161)
+	at com.datastax.spark.connector.cql.RefCountedCache.createNewValueAndKeys(RefCountedCache.scala:32)
+	at com.datastax.spark.connector.cql.RefCountedCache.syncAcquire(RefCountedCache.scala:69)
+	at com.datastax.spark.connector.cql.RefCountedCache.acquire(RefCountedCache.scala:57)
+	at com.datastax.spark.connector.cql.CassandraConnector.openSession(CassandraConnector.scala:81)
+	at com.datastax.spark.connector.cql.CassandraConnector.withSessionDo(CassandraConnector.scala:103)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.com$datastax$spark$connector$datasource$CassandraCatalog$$getMetadata(CassandraCatalog.scala:476)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.getRelationMetaData(CassandraCatalog.scala:432)
+	at org.apache.spark.sql.cassandra.DefaultSource.getTable(DefaultSource.scala:63)
+	at org.apache.spark.sql.cassandra.DefaultSource.inferSchema(DefaultSource.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.DataSourceV2Utils$.getTableFromProvider(DataSourceV2Utils.scala:90)
+	at org.apache.spark.sql.DataFrameWriter.getTable$1(DataFrameWriter.scala:281)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:297)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.oss.driver.api.core.AllNodesFailedException.copy(AllNodesFailedException.java:141)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:835)
+	at com.datastax.spark.connector.cql.DefaultConnectionFactory$.createSession(CassandraConnectionFactory.scala:143)
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:167)
+	... 26 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+25/11/21 10:54:35 WARN SparkEnv: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\userFiles-c345b049-f808-48e2-9f45-2b9fae7fe194
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\userFiles-c345b049-f808-48e2-9f45-2b9fae7fe194\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:108)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2310)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2310)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.api.java.JavaSparkContext.stop(JavaSparkContext.scala:550)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+[spark] Session stopped
+
+
+Pipeline error: An error occurred while calling o1712.save.
+: java.io.IOException: Failed to open native connection to Cassandra at {localhost:9042} :: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:173)
+	at com.datastax.spark.connector.cql.CassandraConnector$.$anonfun$sessionCache$1(CassandraConnector.scala:161)
+	at com.datastax.spark.connector.cql.RefCountedCache.createNewValueAndKeys(RefCountedCache.scala:32)
+	at com.datastax.spark.connector.cql.RefCountedCache.syncAcquire(RefCountedCache.scala:69)
+	at com.datastax.spark.connector.cql.RefCountedCache.acquire(RefCountedCache.scala:57)
+	at com.datastax.spark.connector.cql.CassandraConnector.openSession(CassandraConnector.scala:81)
+	at com.datastax.spark.connector.cql.CassandraConnector.withSessionDo(CassandraConnector.scala:103)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.com$datastax$spark$connector$datasource$CassandraCatalog$$getMetadata(CassandraCatalog.scala:476)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.getRelationMetaData(CassandraCatalog.scala:432)
+	at org.apache.spark.sql.cassandra.DefaultSource.getTable(DefaultSource.scala:63)
+	at org.apache.spark.sql.cassandra.DefaultSource.inferSchema(DefaultSource.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.DataSourceV2Utils$.getTableFromProvider(DataSourceV2Utils.scala:90)
+	at org.apache.spark.sql.DataFrameWriter.getTable$1(DataFrameWriter.scala:281)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:297)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.oss.driver.api.core.AllNodesFailedException.copy(AllNodesFailedException.java:141)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:835)
+	at com.datastax.spark.connector.cql.DefaultConnectionFactory$.createSession(CassandraConnectionFactory.scala:143)
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:167)
+	... 26 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1919, in <module>
+    main()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1907, in main
+    pipeline.run_pipeline()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1767, in run_pipeline
+    self.write_to_cassandra_unified(arbitrage_df, "arbitrage")
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1543, in write_to_cassandra_unified
+    .save()
+     ^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\pyspark\sql\readwriter.py", line 1461, in save
+    self._jwrite.save()
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\py4j\protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o1712.save.
+: java.io.IOException: Failed to open native connection to Cassandra at {localhost:9042} :: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:173)
+	at com.datastax.spark.connector.cql.CassandraConnector$.$anonfun$sessionCache$1(CassandraConnector.scala:161)
+	at com.datastax.spark.connector.cql.RefCountedCache.createNewValueAndKeys(RefCountedCache.scala:32)
+	at com.datastax.spark.connector.cql.RefCountedCache.syncAcquire(RefCountedCache.scala:69)
+	at com.datastax.spark.connector.cql.RefCountedCache.acquire(RefCountedCache.scala:57)
+	at com.datastax.spark.connector.cql.CassandraConnector.openSession(CassandraConnector.scala:81)
+	at com.datastax.spark.connector.cql.CassandraConnector.withSessionDo(CassandraConnector.scala:103)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.com$datastax$spark$connector$datasource$CassandraCatalog$$getMetadata(CassandraCatalog.scala:476)
+	at com.datastax.spark.connector.datasource.CassandraCatalog$.getRelationMetaData(CassandraCatalog.scala:432)
+	at org.apache.spark.sql.cassandra.DefaultSource.getTable(DefaultSource.scala:63)
+	at org.apache.spark.sql.cassandra.DefaultSource.inferSchema(DefaultSource.scala:67)
+	at org.apache.spark.sql.execution.datasources.v2.DataSourceV2Utils$.getTableFromProvider(DataSourceV2Utils.scala:90)
+	at org.apache.spark.sql.DataFrameWriter.getTable$1(DataFrameWriter.scala:281)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:297)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:248)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.datastax.oss.driver.api.core.AllNodesFailedException: Could not reach any contact point, make sure you've provided valid addresses (showing first 2 nodes, use getAllErrors() for more): Node(endPoint=localhost/127.0.0.1:9042, hostId=null, hashCode=60df9db7): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms], Node(endPoint=localhost/[0:0:0:0:0:0:0:1]:9042, hostId=null, hashCode=5f36658f): [com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms]
+	at com.datastax.oss.driver.api.core.AllNodesFailedException.copy(AllNodesFailedException.java:141)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.api.core.session.SessionBuilder.build(SessionBuilder.java:835)
+	at com.datastax.spark.connector.cql.DefaultConnectionFactory$.createSession(CassandraConnectionFactory.scala:143)
+	at com.datastax.spark.connector.cql.CassandraConnector$.createSession(CassandraConnector.scala:167)
+	... 26 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xbdab2f44, L:/127.0.0.1:57120 - R:localhost/127.0.0.1:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+	Suppressed: com.datastax.oss.driver.api.core.DriverTimeoutException: [s0|control|id: 0xeb0e16c1, L:/[0:0:0:0:0:0:0:1]:57123 - R:localhost/[0:0:0:0:0:0:0:1]:9042] Protocol initialization request, step 1 (OPTIONS): timed out after 5000 ms
+		at com.datastax.oss.driver.internal.core.channel.ChannelHandlerRequest.onTimeout(ChannelHandlerRequest.java:108)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at com.datastax.oss.driver.shaded.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at com.datastax.oss.driver.shaded.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at com.datastax.oss.driver.shaded.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		... 1 more
+
+25/11/21 10:54:36 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\userFiles-c345b049-f808-48e2-9f45-2b9fae7fe194
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\userFiles-c345b049-f808-48e2-9f45-2b9fae7fe194\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/21 10:54:36 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\userFiles-c345b049-f808-48e2-9f45-2b9fae7fe194\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/21 10:54:36 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\pyspark-27074259-304b-46a6-9610-989b7a80110c
+java.nio.file.NoSuchFileException: C:\Users\user\AppData\Local\Temp\spark-951a16a4-016c-4ffd-b588-221c31546eeb\pyspark-27074259-304b-46a6-9610-989b7a80110c
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+SUCCESS: The process with PID 43440 (child process of PID 19112) has been terminated.
+SUCCESS: The process with PID 19112 (child process of PID 38620) has been terminated.
+SUCCESS: The process with PID 38620 (child process of PID 40048) has been terminated.

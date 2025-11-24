@@ -1,0 +1,368 @@
+================================================================================
+ENHANCED PYSPARK ANALYTICS PIPELINE STARTED
+================================================================================
+[spark] Initializing Spark session...
+:: loading settings :: url = jar:file:/C:/Users/user/miniconda3/envs/spark_py311/Lib/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: C:\Users\user\.ivy2\cache
+The jars for the packages stored in: C:\Users\user\.ivy2\jars
+org.postgresql#postgresql added as a dependency
+com.datastax.spark#spark-cassandra-connector_2.12 added as a dependency
+org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-ca79965a-6540-4bf9-8022-1e39ad4c60e8;1.0
+	confs: [default]
+	found org.postgresql#postgresql;42.5.0 in central
+	found org.checkerframework#checker-qual;3.5.0 in central
+	found com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 in central
+	found com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 in central
+	found com.datastax.oss#java-driver-core-shaded;4.13.0 in central
+	found com.datastax.oss#native-protocol;1.5.0 in central
+	found com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 in central
+	found com.typesafe#config;1.4.1 in central
+	found org.slf4j#slf4j-api;1.7.26 in central
+	found io.dropwizard.metrics#metrics-core;4.1.18 in central
+	found org.hdrhistogram#HdrHistogram;2.1.12 in central
+	found org.reactivestreams#reactive-streams;1.0.3 in central
+	found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+	found com.github.spotbugs#spotbugs-annotations;3.1.12 in central
+	found com.google.code.findbugs#jsr305;3.0.2 in central
+	found com.datastax.oss#java-driver-mapper-runtime;4.13.0 in central
+	found com.datastax.oss#java-driver-query-builder;4.13.0 in central
+	found org.apache.commons#commons-lang3;3.10 in central
+	found com.thoughtworks.paranamer#paranamer;2.8 in central
+	found org.scala-lang#scala-reflect;2.12.11 in central
+	found org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 in central
+	found org.mongodb#mongodb-driver-sync;4.8.2 in central
+	[4.8.2] org.mongodb#mongodb-driver-sync;[4.8.1,4.8.99)
+	found org.mongodb#bson;4.8.2 in central
+	found org.mongodb#mongodb-driver-core;4.8.2 in central
+	found org.mongodb#bson-record-codec;4.8.2 in central
+:: resolution report :: resolve 3213ms :: artifacts dl 172ms
+	:: modules in use:
+	com.datastax.oss#java-driver-core-shaded;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-mapper-runtime;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-query-builder;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 from central in [default]
+	com.datastax.oss#native-protocol;1.5.0 from central in [default]
+	com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 from central in [default]
+	com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 from central in [default]
+	com.github.spotbugs#spotbugs-annotations;3.1.12 from central in [default]
+	com.github.stephenc.jcip#jcip-annotations;1.0-1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from central in [default]
+	com.thoughtworks.paranamer#paranamer;2.8 from central in [default]
+	com.typesafe#config;1.4.1 from central in [default]
+	io.dropwizard.metrics#metrics-core;4.1.18 from central in [default]
+	org.apache.commons#commons-lang3;3.10 from central in [default]
+	org.checkerframework#checker-qual;3.5.0 from central in [default]
+	org.hdrhistogram#HdrHistogram;2.1.12 from central in [default]
+	org.mongodb#bson;4.8.2 from central in [default]
+	org.mongodb#bson-record-codec;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-core;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-sync;4.8.2 from central in [default]
+	org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 from central in [default]
+	org.postgresql#postgresql;42.5.0 from central in [default]
+	org.reactivestreams#reactive-streams;1.0.3 from central in [default]
+	org.scala-lang#scala-reflect;2.12.11 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 from central in [default]
+	org.slf4j#slf4j-api;1.7.26 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   26  |   1   |   0   |   0   ||   26  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-ca79965a-6540-4bf9-8022-1e39ad4c60e8
+	confs: [default]
+	0 artifacts copied, 26 already retrieved (0kB/35ms)
+25/11/22 00:32:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[spark] Spark session initialized
+
+[1] Reading data sources...
+[spark] Reading orderbook data from QuestDB...
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [spark] Loaded 1761117 orderbook records
+[spark] Reading sentiment data from LMDB...
+[spark] Loaded 1617 sentiment records from LMDB
+[Stage 6:>                                                          (0 + 2) / 2][Stage 6:=============================>                             (1 + 1) / 2]                                                                                Loaded 1761117 orderbook records
+Loaded 1617 sentiment records
+
+================================================================================
+A) ORIGINAL ANALYTICS (IMPROVED)
+================================================================================
+
+[A1] Arbitrage detection (threshold: 50 bps)...
+[spark] Detecting arbitrage opportunities...
+[Stage 9:>                  (0 + 1) / 1][Stage 10:>                 (0 + 1) / 1][Stage 10:>                                                         (0 + 1) / 1][Stage 12:>                 (0 + 2) / 2][Stage 14:>                 (0 + 0) / 2][Stage 12:=========>        (1 + 1) / 2][Stage 14:>                 (0 + 1) / 2][Stage 14:>                                                         (0 + 2) / 2]                                                                                [Stage 14:=============================>                            (1 + 1) / 2]                                                                                [spark] Found 3 arbitrage opportunities
+
+[A2] Sentiment-price correlation...
+[spark] Correlating sentiment with price movements...
+[Stage 25:>                 (0 + 2) / 2][Stage 26:>                 (0 + 0) / 1][Stage 25:=========>        (1 + 1) / 2][Stage 26:>                 (0 + 1) / 1][Stage 26:>                                                         (0 + 1) / 1]                                                                                [Stage 26:>                                                         (0 + 1) / 1]                                                                                [spark] Generated 0 sentiment-price correlation records
+
+[A3] Price prediction (24h window)...
+[spark] Predicting price movements...
+[spark] Generated 0 price predictions
+
+================================================================================
+B) VOLUME & LIQUIDITY ANALYTICS
+================================================================================
+
+[B1] Order depth analysis...
+[spark] Analyzing order book depth...
+[Stage 38:>                                                         (0 + 1) / 1]                                                                                [spark] Generated 139 order depth records
+
+[B2] VWAP calculation...
+[spark] Calculating VWAP...
+[Stage 44:>                                                         (0 + 1) / 1]                                                                                [spark] Generated 139 VWAP records
+
+[B3] Bid-ask imbalance...
+[spark] Analyzing bid-ask imbalance...
+[Stage 50:>                                                         (0 + 1) / 1]                                                                                [spark] Generated 139 bid-ask imbalance records
+
+================================================================================
+C) VOLATILITY & PATTERN DETECTION
+================================================================================
+
+[C1] Rolling volatility (1h, 4h, 24h)...
+[spark] Calculating rolling volatility...
+[Stage 56:>                 (0 + 1) / 1][Stage 57:>                 (0 + 1) / 1]                                                                                [spark] Generated 31 volatility records
+
+[C2] Bollinger Bands...
+[spark] Calculating Bollinger Bands...
+[Stage 65:>                                                         (0 + 1) / 1][Stage 65:>                 (0 + 1) / 1][Stage 66:>                 (0 + 1) / 1][Stage 65:>                                                         (0 + 1) / 1]                                                                                [Stage 65:>                                                         (0 + 1) / 1]                                                                                [spark] Generated 31 Bollinger Bands records
+
+[C3] Flash event detection...
+[spark] Detecting flash events...
+[Stage 74:>                                                         (0 + 1) / 1]                                                                                [spark] Detected 1 flash events
+
+================================================================================
+D) ENHANCED SENTIMENT ANALYTICS
+================================================================================
+
+[D1] Sentiment momentum...
+[spark] Analyzing sentiment momentum...
+[Stage 80:>                                                         (0 + 2) / 2][Stage 80:=============================>                            (1 + 1) / 2]                                                                                [spark] Generated 53 sentiment momentum records
+
+[D2] Sentiment-price divergence...
+[spark] Detecting sentiment-price divergence...
+[Stage 90:>                 (0 + 2) / 2][Stage 91:>                 (0 + 0) / 1][Stage 90:=========>        (1 + 1) / 2][Stage 91:>                 (0 + 1) / 1]                                                                                [Stage 91:>                                                         (0 + 1) / 1]                                                                                [spark] Detected 0 sentiment-price divergences
+
+================================================================================
+E) CROSS-ASSET ANALYTICS
+================================================================================
+
+[E1] Correlation matrix...
+[spark] Calculating correlation matrix...
+[Stage 103:>                                                        (0 + 1) / 1]                                                                                [Stage 116:>                                                        (0 + 1) / 1]                                                                                [Stage 131:>                                                        (0 + 1) / 1]                                                                                [Stage 146:>                                                        (0 + 1) / 1]                                                                                [Stage 161:>                                                        (0 + 1) / 1]                                                                                [Stage 176:>                                                        (0 + 1) / 1]                                                                                [Stage 191:>                                                        (0 + 1) / 1]                                                                                [Stage 206:>                                                        (0 + 1) / 1]                                                                                [Stage 221:>                                                        (0 + 1) / 1]                                                                                [Stage 236:>                                                        (0 + 1) / 1]                                                                                [Stage 251:>                                                        (0 + 1) / 1]                                                                                [Stage 266:>                                                        (0 + 1) / 1]                                                                                [Stage 281:>                                                        (0 + 1) / 1]                                                                                [Stage 296:>                                                        (0 + 1) / 1]                                                                                [Stage 311:>                                                        (0 + 1) / 1]                                                                                [Stage 326:>                                                        (0 + 1) / 1]                                                                                [Stage 341:>                                                        (0 + 2) / 2][Stage 341:============================>                            (1 + 1) / 2]                                                                                [spark] Generated 15 correlation pairs
+
+================================================================================
+F) TEXT CONTENT ANALYTICS (Word-Level Analysis)
+================================================================================
+
+[F1] Word frequency analysis...
+[spark] Analyzing word frequency and content...
+[Stage 344:>                                                        (0 + 2) / 2][Stage 344:============================>                            (1 + 1) / 2]                                                                                [spark] Generated 6645 word frequency records
+
+[F2] Word-price correlation...
+[spark] Correlating word trends with price movements...
+[Stage 350:>                (0 + 2) / 2][Stage 351:>                (0 + 0) / 1][Stage 350:========>        (1 + 1) / 2][Stage 351:>                (0 + 1) / 1][Stage 351:>                                                        (0 + 1) / 1]                                                                                [Stage 351:>                                                        (0 + 1) / 1]                                                                                [spark] Generated 0 word-price correlation signals
+
+[F3] Word-sentiment distribution...
+[spark] Analyzing word-sentiment distribution...
+[Stage 366:>                                                        (0 + 2) / 2][Stage 366:============================>                            (1 + 1) / 2]                                                                                [spark] Generated 1737 word-sentiment distribution records
+
+================================================================================
+G) ADVANCED CROSS-ANALYSIS (Reddit ¡ê Price Patterns)
+================================================================================
+
+[G1] Words appearing after price moves (lagging indicators)...
+[G1] Analyzing words after 2.0% price moves...
+
+[ERROR] Pipeline failed: [DATATYPE_MISMATCH.BINARY_OP_DIFF_TYPES] Cannot resolve "(timestamp >= timestamp)" due to data type mismatch: the left and right operands of the binary operator have incompatible types ("DOUBLE" and "TIMESTAMP").; line 2 pos 28;
+'Join Inner, ((timestamp#75 >= timestamp#32) AND (timestamp#75 <= cast(timestamp#32 + INTERVAL '04' HOUR as timestamp)))
+:- SubqueryAlias pm
+:  +- Project [timestamp#32, symbol#1, base#2, mid_price#10, price_change_pct#9212, move_type#9231]
+:     +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, price_change_pct#9212, CASE WHEN (price_change_pct#9212 > cast(0 as double)) THEN PUMP ELSE DUMP END AS move_type#9231]
+:        +- Filter (abs(price_change_pct#9212) >= 2.0)
+:           +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, (((mid_price#10 - price_1h_ago#9193) / price_1h_ago#9193) * cast(100 as double)) AS price_change_pct#9212]
+:              +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193]
+:                 +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, _w0#9194L, price_1h_ago#9193, price_1h_ago#9193]
+:                    +- Window [lag(mid_price#10, -1, null) windowspecdefinition(symbol#1, exchange#0, _w0#9194L ASC NULLS FIRST, specifiedwindowframe(RowFrame, -1, -1)) AS price_1h_ago#9193], [symbol#1, exchange#0], [_w0#9194L ASC NULLS FIRST]
+:                       +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, cast(timestamp#32 as bigint) AS _w0#9194L]
+:                          +- Filter (venue_type#5 = SPOT)
+:                             +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, ts#15 AS timestamp#32]
+:                                +- Relation [exchange#0,symbol#1,base#2,quote#3,region#4,venue_type#5,instance#6,seq#7L,best_bid#8,best_ask#9,mid_price#10,spread_bps#11,recv_ts_s#12,depth_json#13,raw_json#14,ts#15] JDBCRelation(orderbook) [numPartitions=1]
++- SubqueryAlias w
+   +- Project [timestamp#75, subreddit#73, word#9277, sentiment_polarity#9288]
+      +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277, CASE WHEN isnotnull(sentiment#72[polarity]) THEN cast(sentiment#72[polarity] as double) ELSE 0.0 END AS sentiment_polarity#9288]
+         +- Filter (length(word#9277) >= 3)
+            +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277]
+               +- Generate explode(words_array#9266), false, [word#9277]
+                  +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, split(trim(cleaned_text#9257, None), \s+, -1) AS words_array#9266]
+                     +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, lower(regexp_replace(text#74, [^a-zA-Z0-9\s],  , 1)) AS cleaned_text#9257]
+                        +- LogicalRDD [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76], false
+
+25/11/22 00:35:07 WARN SparkEnv: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18\userFiles-8185d632-0c37-49cb-8c08-2a6863ef9e4d
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18\userFiles-8185d632-0c37-49cb-8c08-2a6863ef9e4d\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:108)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2310)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2310)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.api.java.JavaSparkContext.stop(JavaSparkContext.scala:550)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[spark] Session stopped
+
+
+Pipeline error: [DATATYPE_MISMATCH.BINARY_OP_DIFF_TYPES] Cannot resolve "(timestamp >= timestamp)" due to data type mismatch: the left and right operands of the binary operator have incompatible types ("DOUBLE" and "TIMESTAMP").; line 2 pos 28;
+'Join Inner, ((timestamp#75 >= timestamp#32) AND (timestamp#75 <= cast(timestamp#32 + INTERVAL '04' HOUR as timestamp)))
+:- SubqueryAlias pm
+:  +- Project [timestamp#32, symbol#1, base#2, mid_price#10, price_change_pct#9212, move_type#9231]
+:     +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, price_change_pct#9212, CASE WHEN (price_change_pct#9212 > cast(0 as double)) THEN PUMP ELSE DUMP END AS move_type#9231]
+:        +- Filter (abs(price_change_pct#9212) >= 2.0)
+:           +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, (((mid_price#10 - price_1h_ago#9193) / price_1h_ago#9193) * cast(100 as double)) AS price_change_pct#9212]
+:              +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193]
+:                 +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, _w0#9194L, price_1h_ago#9193, price_1h_ago#9193]
+:                    +- Window [lag(mid_price#10, -1, null) windowspecdefinition(symbol#1, exchange#0, _w0#9194L ASC NULLS FIRST, specifiedwindowframe(RowFrame, -1, -1)) AS price_1h_ago#9193], [symbol#1, exchange#0], [_w0#9194L ASC NULLS FIRST]
+:                       +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, cast(timestamp#32 as bigint) AS _w0#9194L]
+:                          +- Filter (venue_type#5 = SPOT)
+:                             +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, ts#15 AS timestamp#32]
+:                                +- Relation [exchange#0,symbol#1,base#2,quote#3,region#4,venue_type#5,instance#6,seq#7L,best_bid#8,best_ask#9,mid_price#10,spread_bps#11,recv_ts_s#12,depth_json#13,raw_json#14,ts#15] JDBCRelation(orderbook) [numPartitions=1]
++- SubqueryAlias w
+   +- Project [timestamp#75, subreddit#73, word#9277, sentiment_polarity#9288]
+      +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277, CASE WHEN isnotnull(sentiment#72[polarity]) THEN cast(sentiment#72[polarity] as double) ELSE 0.0 END AS sentiment_polarity#9288]
+         +- Filter (length(word#9277) >= 3)
+            +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277]
+               +- Generate explode(words_array#9266), false, [word#9277]
+                  +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, split(trim(cleaned_text#9257, None), \s+, -1) AS words_array#9266]
+                     +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, lower(regexp_replace(text#74, [^a-zA-Z0-9\s],  , 1)) AS cleaned_text#9257]
+                        +- LogicalRDD [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76], false
+
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1966, in <module>
+    main()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1954, in main
+    pipeline.run_pipeline()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1771, in run_pipeline
+    words_after_price_df = cross_analytics.analyze_words_after_price_moves(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Financewebsocket251110\advanced_cross_analytics.py", line 77, in analyze_words_after_price_moves
+    cross_analysis = significant_moves.alias("pm").join(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\pyspark\sql\dataframe.py", line 2487, in join
+    jdf = self._jdf.join(other._jdf, on, how)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\spark_py311\Lib\site-packages\pyspark\errors\exceptions\captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [DATATYPE_MISMATCH.BINARY_OP_DIFF_TYPES] Cannot resolve "(timestamp >= timestamp)" due to data type mismatch: the left and right operands of the binary operator have incompatible types ("DOUBLE" and "TIMESTAMP").; line 2 pos 28;
+'Join Inner, ((timestamp#75 >= timestamp#32) AND (timestamp#75 <= cast(timestamp#32 + INTERVAL '04' HOUR as timestamp)))
+:- SubqueryAlias pm
+:  +- Project [timestamp#32, symbol#1, base#2, mid_price#10, price_change_pct#9212, move_type#9231]
+:     +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, price_change_pct#9212, CASE WHEN (price_change_pct#9212 > cast(0 as double)) THEN PUMP ELSE DUMP END AS move_type#9231]
+:        +- Filter (abs(price_change_pct#9212) >= 2.0)
+:           +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193, (((mid_price#10 - price_1h_ago#9193) / price_1h_ago#9193) * cast(100 as double)) AS price_change_pct#9212]
+:              +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, price_1h_ago#9193]
+:                 +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, _w0#9194L, price_1h_ago#9193, price_1h_ago#9193]
+:                    +- Window [lag(mid_price#10, -1, null) windowspecdefinition(symbol#1, exchange#0, _w0#9194L ASC NULLS FIRST, specifiedwindowframe(RowFrame, -1, -1)) AS price_1h_ago#9193], [symbol#1, exchange#0], [_w0#9194L ASC NULLS FIRST]
+:                       +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, timestamp#32, cast(timestamp#32 as bigint) AS _w0#9194L]
+:                          +- Filter (venue_type#5 = SPOT)
+:                             +- Project [exchange#0, symbol#1, base#2, quote#3, region#4, venue_type#5, instance#6, seq#7L, best_bid#8, best_ask#9, mid_price#10, spread_bps#11, recv_ts_s#12, depth_json#13, raw_json#14, ts#15 AS timestamp#32]
+:                                +- Relation [exchange#0,symbol#1,base#2,quote#3,region#4,venue_type#5,instance#6,seq#7L,best_bid#8,best_ask#9,mid_price#10,spread_bps#11,recv_ts_s#12,depth_json#13,raw_json#14,ts#15] JDBCRelation(orderbook) [numPartitions=1]
++- SubqueryAlias w
+   +- Project [timestamp#75, subreddit#73, word#9277, sentiment_polarity#9288]
+      +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277, CASE WHEN isnotnull(sentiment#72[polarity]) THEN cast(sentiment#72[polarity] as double) ELSE 0.0 END AS sentiment_polarity#9288]
+         +- Filter (length(word#9277) >= 3)
+            +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, words_array#9266, word#9277]
+               +- Generate explode(words_array#9266), false, [word#9277]
+                  +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, cleaned_text#9257, split(trim(cleaned_text#9257, None), \s+, -1) AS words_array#9266]
+                     +- Project [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76, lower(regexp_replace(text#74, [^a-zA-Z0-9\s],  , 1)) AS cleaned_text#9257]
+                        +- LogicalRDD [item_id#70, item_type#71, sentiment#72, subreddit#73, text#74, timestamp#75, post_id#76], false
+
+25/11/22 00:35:09 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18\userFiles-8185d632-0c37-49cb-8c08-2a6863ef9e4d\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/22 00:35:09 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18\userFiles-8185d632-0c37-49cb-8c08-2a6863ef9e4d
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-74e11393-560b-437d-9c5a-06a846d96b18\userFiles-8185d632-0c37-49cb-8c08-2a6863ef9e4d\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+SUCCESS: The process with PID 31344 (child process of PID 41704) has been terminated.
+SUCCESS: The process with PID 41704 (child process of PID 34004) has been terminated.
+SUCCESS: The process with PID 34004 (child process of PID 10480) has been terminated.

@@ -1,0 +1,4 @@
+nul
+analytics_output.log pipeline_final.log pipeline_full_run.log pipeline_output.log pipeline_run_fixed.log py311_pipeline.log spark_debug.log
+__pycache__/
+data/

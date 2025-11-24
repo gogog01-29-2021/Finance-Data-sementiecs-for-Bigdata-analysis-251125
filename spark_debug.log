@@ -1,0 +1,44 @@
+1 RLock(s) were not greened, to fix this error make sure you run eventlet.monkey_patch() before importing any other modules.
+'C:\Users\user\miniconda3\envs\python' is not recognized as an internal or external command,
+operable program or batch file.
+================================================================================
+PYSPARK ANALYTICS PIPELINE STARTED
+================================================================================
+[spark] Initializing Spark session...
+[spark] Using Python: C:\Users\user\Documents\Financewebsocket251110\python_wrapper.bat
+[spark] Java Home: C:\Program Files\Microsoft\jdk-17.0.16.8-hotspot
+[spark] Python version: 3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]
+
+[ERROR] Pipeline failed: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+
+
+Pipeline error: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 537, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 525, in main
+    pipeline.run_pipeline()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 465, in run_pipeline
+    self.initialize_spark()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 124, in initialize_spark
+    .getOrCreate()
+     ~~~~~~~~~~~^^
+  File "C:\Users\user\miniconda3\envs\python=3.10\Lib\site-packages\pyspark\sql\session.py", line 556, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "C:\Users\user\miniconda3\envs\python=3.10\Lib\site-packages\pyspark\core\context.py", line 523, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\python=3.10\Lib\site-packages\pyspark\core\context.py", line 205, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\miniconda3\envs\python=3.10\Lib\site-packages\pyspark\core\context.py", line 444, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+                                       ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\miniconda3\envs\python=3.10\Lib\site-packages\pyspark\java_gateway.py", line 111, in launch_gateway
+    raise PySparkRuntimeError(
+    ...<2 lines>...
+    )
+pyspark.errors.exceptions.base.PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.

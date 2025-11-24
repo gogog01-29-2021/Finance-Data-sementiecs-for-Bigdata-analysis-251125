@@ -1,0 +1,46 @@
+FROM python:3.11-slim
+
+# Install Java (required for Spark) and Cassandra tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openjdk-17-jre-headless \
+    gcc \
+    python3-dev \
+    curl \
+    procps \
+    netcat-openbsd \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set Java environment
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$PATH:$JAVA_HOME/bin
+
+# Install Python dependencies
+RUN pip install --no-cache-dir \
+    pyspark==3.5.0 \
+    python-dotenv==1.0.0 \
+    lmdb==1.5.1 \
+    requests==2.31.0 \
+    cassandra-driver==3.29.2 \
+    pymongo==4.6.1 \
+    neo4j==5.16.0 \
+    pandas==2.1.0 \
+    numpy==1.24.0
+
+# Create app directory
+WORKDIR /app
+
+# Create directory for LMDB data
+RUN mkdir -p /app/data/reddit && chmod -R 777 /app/data
+
+# Set environment variables for Spark on Linux
+ENV PYTHONUNBUFFERED=1
+ENV PYSPARK_PYTHON=python3
+ENV PYSPARK_DRIVER_PYTHON=python3
+ENV SPARK_LOCAL_IP=127.0.0.1
+
+# Health check
+HEALTHCHECK --interval=60s --timeout=10s --start-period=120s \
+  CMD python3 -c "import sys; sys.exit(0)" || exit 1
+
+# Run spark_analytics.py (will be overridden by docker-compose command)
+CMD ["python3", "/app/spark_analytics.py"]

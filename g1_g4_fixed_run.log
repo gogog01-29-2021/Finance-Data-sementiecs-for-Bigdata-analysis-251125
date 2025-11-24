@@ -1,0 +1,328 @@
+:: loading settings :: url = jar:file:/C:/Users/user/miniconda3/envs/spark_py311/Lib/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: C:\Users\user\.ivy2\cache
+The jars for the packages stored in: C:\Users\user\.ivy2\jars
+org.postgresql#postgresql added as a dependency
+com.datastax.spark#spark-cassandra-connector_2.12 added as a dependency
+org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-dc02a3af-711b-4488-b4de-62af14b952bd;1.0
+	confs: [default]
+	found org.postgresql#postgresql;42.5.0 in central
+	found org.checkerframework#checker-qual;3.5.0 in central
+	found com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 in central
+	found com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 in central
+	found com.datastax.oss#java-driver-core-shaded;4.13.0 in central
+	found com.datastax.oss#native-protocol;1.5.0 in central
+	found com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 in central
+	found com.typesafe#config;1.4.1 in central
+	found org.slf4j#slf4j-api;1.7.26 in central
+	found io.dropwizard.metrics#metrics-core;4.1.18 in central
+	found org.hdrhistogram#HdrHistogram;2.1.12 in central
+	found org.reactivestreams#reactive-streams;1.0.3 in central
+	found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+	found com.github.spotbugs#spotbugs-annotations;3.1.12 in central
+	found com.google.code.findbugs#jsr305;3.0.2 in central
+	found com.datastax.oss#java-driver-mapper-runtime;4.13.0 in central
+	found com.datastax.oss#java-driver-query-builder;4.13.0 in central
+	found org.apache.commons#commons-lang3;3.10 in central
+	found com.thoughtworks.paranamer#paranamer;2.8 in central
+	found org.scala-lang#scala-reflect;2.12.11 in central
+	found org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 in central
+	found org.mongodb#mongodb-driver-sync;4.8.2 in central
+	[4.8.2] org.mongodb#mongodb-driver-sync;[4.8.1,4.8.99)
+	found org.mongodb#bson;4.8.2 in central
+	found org.mongodb#mongodb-driver-core;4.8.2 in central
+	found org.mongodb#bson-record-codec;4.8.2 in central
+:: resolution report :: resolve 2561ms :: artifacts dl 168ms
+	:: modules in use:
+	com.datastax.oss#java-driver-core-shaded;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-mapper-runtime;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-query-builder;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 from central in [default]
+	com.datastax.oss#native-protocol;1.5.0 from central in [default]
+	com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 from central in [default]
+	com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 from central in [default]
+	com.github.spotbugs#spotbugs-annotations;3.1.12 from central in [default]
+	com.github.stephenc.jcip#jcip-annotations;1.0-1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from central in [default]
+	com.thoughtworks.paranamer#paranamer;2.8 from central in [default]
+	com.typesafe#config;1.4.1 from central in [default]
+	io.dropwizard.metrics#metrics-core;4.1.18 from central in [default]
+	org.apache.commons#commons-lang3;3.10 from central in [default]
+	org.checkerframework#checker-qual;3.5.0 from central in [default]
+	org.hdrhistogram#HdrHistogram;2.1.12 from central in [default]
+	org.mongodb#bson;4.8.2 from central in [default]
+	org.mongodb#bson-record-codec;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-core;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-sync;4.8.2 from central in [default]
+	org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 from central in [default]
+	org.postgresql#postgresql;42.5.0 from central in [default]
+	org.reactivestreams#reactive-streams;1.0.3 from central in [default]
+	org.scala-lang#scala-reflect;2.12.11 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 from central in [default]
+	org.slf4j#slf4j-api;1.7.26 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   26  |   1   |   0   |   0   ||   26  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-dc02a3af-711b-4488-b4de-62af14b952bd
+	confs: [default]
+	0 artifacts copied, 26 already retrieved (0kB/51ms)
+25/11/24 10:05:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 6:>                                                          (0 + 2) / 2][Stage 6:=============================>                             (1 + 1) / 2]                                                                                [Stage 9:>                                                          (0 + 1) / 1][Stage 9:>                  (0 + 1) / 1][Stage 10:>                 (0 + 1) / 1][Stage 12:>                                                         (0 + 2) / 2][Stage 12:>                 (0 + 2) / 2][Stage 14:>                 (0 + 0) / 2][Stage 12:=========>        (1 + 1) / 2][Stage 14:>                 (0 + 1) / 2][Stage 14:>                                                         (0 + 2) / 2]                                                                                [Stage 14:=============================>                            (1 + 1) / 2]                                                                                [Stage 25:>                 (0 + 2) / 2][Stage 26:>                 (0 + 0) / 1][Stage 25:=========>        (1 + 1) / 2][Stage 26:>                 (0 + 1) / 1][Stage 26:>                                                         (0 + 1) / 1]                                                                                [Stage 26:>                                                         (0 + 1) / 1]                                                                                [Stage 38:>                                                         (0 + 1) / 1]                                                                                [Stage 44:>                                                         (0 + 1) / 1]                                                                                [Stage 50:>                                                         (0 + 1) / 1]                                                                                [Stage 56:>                 (0 + 1) / 1][Stage 57:>                 (0 + 1) / 1][Stage 56:>                                                         (0 + 1) / 1]                                                                                [Stage 65:>                 (0 + 1) / 1][Stage 66:>                 (0 + 1) / 1]                                                                                [Stage 74:>                                                         (0 + 1) / 1]                                                                                [Stage 80:>                                                         (0 + 2) / 2][Stage 80:=============================>                            (1 + 1) / 2]                                                                                [Stage 90:>                 (0 + 2) / 2][Stage 91:>                 (0 + 0) / 1][Stage 90:=========>        (1 + 1) / 2][Stage 91:>                 (0 + 1) / 1]                                                                                [Stage 91:>                                                         (0 + 1) / 1]                                                                                [Stage 103:>                                                        (0 + 1) / 1]                                                                                [Stage 116:>                                                        (0 + 1) / 1]                                                                                [Stage 131:>                                                        (0 + 1) / 1]                                                                                [Stage 146:>                                                        (0 + 1) / 1]                                                                                [Stage 161:>                                                        (0 + 1) / 1]                                                                                [Stage 176:>                                                        (0 + 1) / 1]                                                                                [Stage 191:>                                                        (0 + 1) / 1]                                                                                [Stage 206:>                                                        (0 + 1) / 1]                                                                                [Stage 221:>                                                        (0 + 1) / 1]                                                                                [Stage 236:>                                                        (0 + 1) / 1]                                                                                [Stage 251:>                                                        (0 + 1) / 1]                                                                                [Stage 266:>                                                        (0 + 1) / 1]                                                                                [Stage 281:>                                                        (0 + 1) / 1]                                                                                [Stage 296:>                                                        (0 + 1) / 1]                                                                                [Stage 311:>                                                        (0 + 1) / 1]                                                                                [Stage 326:>                                                        (0 + 1) / 1]                                                                                [Stage 341:>                                                        (0 + 2) / 2][Stage 341:============================>                            (1 + 1) / 2]                                                                                [Stage 344:>                                                        (0 + 2) / 2][Stage 344:============================>                            (1 + 1) / 2]                                                                                [Stage 350:>                (0 + 2) / 2][Stage 351:>                (0 + 0) / 1][Stage 350:>                (0 + 2) / 2][Stage 351:>                (0 + 1) / 1][Stage 350:========>        (1 + 1) / 2][Stage 351:>                (0 + 1) / 1][Stage 351:>                                                        (0 + 1) / 1]                                                                                [Stage 351:>                                                        (0 + 1) / 1]                                                                                [Stage 366:>                                                        (0 + 2) / 2][Stage 366:============================>                            (1 + 1) / 2]                                                                                [Stage 372:>                                                        (0 + 1) / 1][Stage 374:>                                                        (0 + 2) / 4][Stage 374:==============>                                          (1 + 2) / 4][Stage 374:============================>                            (2 + 2) / 4][Stage 374:==========================================>              (3 + 1) / 4]                                                                                25/11/24 10:08:09 WARN SparkEnv: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\userFiles-7715fdf5-284c-475a-a30d-e7c65cb6c296
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\userFiles-7715fdf5-284c-475a-a30d-e7c65cb6c296\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:108)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2310)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2310)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.api.java.JavaSparkContext.stop(JavaSparkContext.scala:550)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+================================================================================
+ENHANCED PYSPARK ANALYTICS PIPELINE STARTED
+================================================================================
+[spark] Initializing Spark session...
+[spark] Spark session initialized
+
+[1] Reading data sources...
+[spark] Reading orderbook data from QuestDB...
+[spark] Loaded 1761117 orderbook records
+[spark] Reading sentiment data from LMDB...
+[spark] Loaded 1617 sentiment records from LMDB
+Loaded 1761117 orderbook records
+Loaded 1617 sentiment records
+
+================================================================================
+A) ORIGINAL ANALYTICS (IMPROVED)
+================================================================================
+
+[A1] Arbitrage detection (threshold: 50 bps)...
+[spark] Detecting arbitrage opportunities...
+[spark] Found 3 arbitrage opportunities
+
+[A2] Sentiment-price correlation...
+[spark] Correlating sentiment with price movements...
+[spark] Generated 0 sentiment-price correlation records
+
+[A3] Price prediction (24h window)...
+[spark] Predicting price movements...
+[spark] Generated 0 price predictions
+
+================================================================================
+B) VOLUME & LIQUIDITY ANALYTICS
+================================================================================
+
+[B1] Order depth analysis...
+[spark] Analyzing order book depth...
+[spark] Generated 139 order depth records
+
+[B2] VWAP calculation...
+[spark] Calculating VWAP...
+[spark] Generated 139 VWAP records
+
+[B3] Bid-ask imbalance...
+[spark] Analyzing bid-ask imbalance...
+[spark] Generated 139 bid-ask imbalance records
+
+================================================================================
+C) VOLATILITY & PATTERN DETECTION
+================================================================================
+
+[C1] Rolling volatility (1h, 4h, 24h)...
+[spark] Calculating rolling volatility...
+[spark] Generated 31 volatility records
+
+[C2] Bollinger Bands...
+[spark] Calculating Bollinger Bands...
+[spark] Generated 31 Bollinger Bands records
+
+[C3] Flash event detection...
+[spark] Detecting flash events...
+[spark] Detected 1 flash events
+
+================================================================================
+D) ENHANCED SENTIMENT ANALYTICS
+================================================================================
+
+[D1] Sentiment momentum...
+[spark] Analyzing sentiment momentum...
+[spark] Generated 53 sentiment momentum records
+
+[D2] Sentiment-price divergence...
+[spark] Detecting sentiment-price divergence...
+[spark] Detected 0 sentiment-price divergences
+
+================================================================================
+E) CROSS-ASSET ANALYTICS
+================================================================================
+
+[E1] Correlation matrix...
+[spark] Calculating correlation matrix...
+[spark] Generated 15 correlation pairs
+
+================================================================================
+F) TEXT CONTENT ANALYTICS (Word-Level Analysis)
+================================================================================
+
+[F1] Word frequency analysis...
+[spark] Analyzing word frequency and content...
+[spark] Generated 6645 word frequency records
+
+[F2] Word-price correlation...
+[spark] Correlating word trends with price movements...
+[spark] Generated 0 word-price correlation signals
+
+[F3] Word-sentiment distribution...
+[spark] Analyzing word-sentiment distribution...
+[spark] Generated 1737 word-sentiment distribution records
+
+================================================================================
+G) ADVANCED CROSS-ANALYSIS (Reddit ¡ê Price Patterns)
+================================================================================
+
+[G1] Words appearing after price moves (lagging indicators)...
+[G1] Analyzing words after 2.0% price moves...
+
+[ERROR] Pipeline failed: 'cp949' codec can't encode character '\u2713' in position 2: illegal multibyte sequence
+
+[spark] Session stopped
+
+
+Pipeline error: 'cp949' codec can't encode character '\u2713' in position 2: illegal multibyte sequence
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1966, in <module>
+    main()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1954, in main
+    pipeline.run_pipeline()
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1771, in run_pipeline
+    words_after_price_df = cross_analytics.analyze_words_after_price_moves(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Financewebsocket251110\advanced_cross_analytics.py", line 122, in analyze_words_after_price_moves
+    print(f"  \u2713 Found {result.count()} word-after-price patterns")
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2713' in position 2: illegal multibyte sequence
+25/11/24 10:08:10 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\userFiles-7715fdf5-284c-475a-a30d-e7c65cb6c296
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\userFiles-7715fdf5-284c-475a-a30d-e7c65cb6c296\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 10:08:10 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac
+java.io.IOException: Failed to delete: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\userFiles-7715fdf5-284c-475a-a30d-e7c65cb6c296\org.slf4j_slf4j-api-1.7.26.jar
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 10:08:10 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\pyspark-012d3551-b024-451b-a492-35b588091c6f
+java.nio.file.NoSuchFileException: C:\Users\user\AppData\Local\Temp\spark-adf30a24-792e-4e8f-a6c3-dadad46052ac\pyspark-012d3551-b024-451b-a492-35b588091c6f
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+ERROR: The process with PID 113140 (child process of PID 118764) could not be terminated.
+Reason: There is no running instance of the task.
+ERROR: The process with PID 118764 (child process of PID 110284) could not be terminated.
+Reason: The operation attempted is not supported.
+ERROR: The process with PID 110284 (child process of PID 117280) could not be terminated.
+Reason: The operation attempted is not supported.

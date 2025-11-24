@@ -1,0 +1,386 @@
+Missing Python executable 'python3', defaulting to 'C:\Python313\Lib\site-packages\pyspark\bin\..' for SPARK_HOME environment variable. Please install Python or specify the correct Python executable in PYSPARK_DRIVER_PYTHON or PYSPARK_PYTHON environment variable to detect SPARK_HOME safely.
+WARNING: Using incubator modules: jdk.incubator.vector
+:: loading settings :: url = jar:file:/C:/Python313/Lib/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: C:\Users\user\.ivy2.5.2\cache
+The jars for the packages stored in: C:\Users\user\.ivy2.5.2\jars
+org.postgresql#postgresql added as a dependency
+com.datastax.spark#spark-cassandra-connector_2.12 added as a dependency
+org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-e4aa1fc5-a033-47d1-8666-5f2a7c565bf8;1.0
+	confs: [default]
+	found org.postgresql#postgresql;42.5.0 in central
+	found org.checkerframework#checker-qual;3.5.0 in central
+	found com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 in central
+	found com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 in central
+	found com.datastax.oss#java-driver-core-shaded;4.13.0 in central
+	found com.datastax.oss#native-protocol;1.5.0 in central
+	found com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 in central
+	found com.typesafe#config;1.4.1 in central
+	found org.slf4j#slf4j-api;1.7.26 in central
+	found io.dropwizard.metrics#metrics-core;4.1.18 in central
+	found org.hdrhistogram#HdrHistogram;2.1.12 in central
+	found org.reactivestreams#reactive-streams;1.0.3 in central
+	found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+	found com.github.spotbugs#spotbugs-annotations;3.1.12 in central
+	found com.google.code.findbugs#jsr305;3.0.2 in central
+	found com.datastax.oss#java-driver-mapper-runtime;4.13.0 in central
+	found com.datastax.oss#java-driver-query-builder;4.13.0 in central
+	found org.apache.commons#commons-lang3;3.10 in central
+	found com.thoughtworks.paranamer#paranamer;2.8 in central
+	found org.scala-lang#scala-reflect;2.12.11 in central
+	found org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 in central
+	found org.mongodb#mongodb-driver-sync;4.8.2 in central
+	[4.8.2] org.mongodb#mongodb-driver-sync;[4.8.1,4.8.99)
+	found org.mongodb#bson;4.8.2 in central
+	found org.mongodb#mongodb-driver-core;4.8.2 in central
+	found org.mongodb#bson-record-codec;4.8.2 in central
+:: resolution report :: resolve 3174ms :: artifacts dl 187ms
+	:: modules in use:
+	com.datastax.oss#java-driver-core-shaded;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-mapper-runtime;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-query-builder;4.13.0 from central in [default]
+	com.datastax.oss#java-driver-shaded-guava;25.1-jre-graal-sub-1 from central in [default]
+	com.datastax.oss#native-protocol;1.5.0 from central in [default]
+	com.datastax.spark#spark-cassandra-connector-driver_2.12;3.4.1 from central in [default]
+	com.datastax.spark#spark-cassandra-connector_2.12;3.4.1 from central in [default]
+	com.github.spotbugs#spotbugs-annotations;3.1.12 from central in [default]
+	com.github.stephenc.jcip#jcip-annotations;1.0-1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from central in [default]
+	com.thoughtworks.paranamer#paranamer;2.8 from central in [default]
+	com.typesafe#config;1.4.1 from central in [default]
+	io.dropwizard.metrics#metrics-core;4.1.18 from central in [default]
+	org.apache.commons#commons-lang3;3.10 from central in [default]
+	org.checkerframework#checker-qual;3.5.0 from central in [default]
+	org.hdrhistogram#HdrHistogram;2.1.12 from central in [default]
+	org.mongodb#bson;4.8.2 from central in [default]
+	org.mongodb#bson-record-codec;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-core;4.8.2 from central in [default]
+	org.mongodb#mongodb-driver-sync;4.8.2 from central in [default]
+	org.mongodb.spark#mongo-spark-connector_2.12;10.3.0 from central in [default]
+	org.postgresql#postgresql;42.5.0 from central in [default]
+	org.reactivestreams#reactive-streams;1.0.3 from central in [default]
+	org.scala-lang#scala-reflect;2.12.11 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.11.0 from central in [default]
+	org.slf4j#slf4j-api;1.7.26 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   26  |   1   |   0   |   0   ||   26  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-e4aa1fc5-a033-47d1-8666-5f2a7c565bf8
+	confs: [default]
+	0 artifacts copied, 26 already retrieved (0kB/50ms)
+25/11/20 17:32:06 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+25/11/20 17:32:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/11/20 17:32:09 ERROR SparkContext: Error initializing SparkContext.
+java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:789)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:298)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:417)
+	at org.apache.spark.SparkContext.addFile(SparkContext.scala:1864)
+	at org.apache.spark.SparkContext.$anonfun$new$16(SparkContext.scala:545)
+	at org.apache.spark.SparkContext.$anonfun$new$16$adapted(SparkContext.scala:545)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:545)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:601)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:622)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:645)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:742)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1954)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1912)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1885)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:207)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:304)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:250)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:103)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:102)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:99)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:379)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:961)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:204)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:227)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:96)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:521)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:492)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:569)
+	... 27 more
+25/11/20 17:32:09 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+================================================================================
+ENHANCED PYSPARK ANALYTICS PIPELINE STARTED
+================================================================================
+[spark] Initializing Spark session...
+
+[ERROR] Pipeline failed: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:789)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:298)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:417)
+	at org.apache.spark.SparkContext.addFile(SparkContext.scala:1864)
+	at org.apache.spark.SparkContext.$anonfun$new$16(SparkContext.scala:545)
+	at org.apache.spark.SparkContext.$anonfun$new$16$adapted(SparkContext.scala:545)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:545)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:601)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:622)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:645)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:742)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1954)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1912)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1885)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:207)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:304)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:250)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:103)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:102)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:99)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:379)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:961)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:204)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:227)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:96)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:521)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:492)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:569)
+	... 27 more
+
+
+
+Pipeline error: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:789)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:298)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:417)
+	at org.apache.spark.SparkContext.addFile(SparkContext.scala:1864)
+	at org.apache.spark.SparkContext.$anonfun$new$16(SparkContext.scala:545)
+	at org.apache.spark.SparkContext.$anonfun$new$16$adapted(SparkContext.scala:545)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:545)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:601)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:622)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:645)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:742)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1954)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1912)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1885)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:207)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:304)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:250)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:103)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:102)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:99)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:379)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:961)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:204)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:227)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:96)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:521)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:492)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:569)
+	... 27 more
+
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1348, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1336, in main
+    pipeline.run_pipeline()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 1110, in run_pipeline
+    self.initialize_spark()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Documents\Financewebsocket251110\spark_analytics.py", line 87, in initialize_spark
+    .getOrCreate()
+     ~~~~~~~~~~~^^
+  File "C:\Python313\Lib\site-packages\pyspark\sql\session.py", line 556, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "C:\Python313\Lib\site-packages\pyspark\core\context.py", line 523, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\pyspark\core\context.py", line 207, in __init__
+    self._do_init(
+    ~~~~~~~~~~~~~^
+        master,
+        ^^^^^^^
+    ...<10 lines>...
+        memory_profiler_cls,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python313\Lib\site-packages\pyspark\core\context.py", line 300, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\pyspark\core\context.py", line 429, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Python313\Lib\site-packages\py4j\java_gateway.py", line 1627, in __call__
+    return_value = get_return_value(
+        answer, self._gateway_client, None, self._fqn)
+  File "C:\Python313\Lib\site-packages\py4j\protocol.py", line 327, in get_return_value
+    raise Py4JJavaError(
+        "An error occurred while calling {0}{1}{2}.\n".
+        format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:789)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:298)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:417)
+	at org.apache.spark.SparkContext.addFile(SparkContext.scala:1864)
+	at org.apache.spark.SparkContext.$anonfun$new$16(SparkContext.scala:545)
+	at org.apache.spark.SparkContext.$anonfun$new$16$adapted(SparkContext.scala:545)
+	at scala.collection.immutable.List.foreach(List.scala:334)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:545)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:59)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:601)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:622)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:645)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:742)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1954)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1912)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1885)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:207)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:304)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:250)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:103)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:102)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:99)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:379)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:961)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:204)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:227)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:96)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1132)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1141)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:521)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:492)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:569)
+	... 27 more
+
+SUCCESS: The process with PID 31516 (child process of PID 33320) has been terminated.
+SUCCESS: The process with PID 33320 (child process of PID 32980) has been terminated.
+SUCCESS: The process with PID 32980 (child process of PID 39772) has been terminated.

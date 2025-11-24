@@ -1,0 +1,219 @@
+version: '3.8'
+
+services:
+  # QuestDB - Time-series database for orderbook data
+  questdb:
+    image: questdb/questdb:latest
+    container_name: questdb
+    ports:
+      - "9000:9000"   # Web UI
+      - "8812:8812"   # PostgreSQL wire protocol (for analytics)
+      - "9009:9009"   # InfluxDB line protocol
+    volumes:
+      - questdb_data:/var/lib/questdb
+    environment:
+      - QDB_TELEMETRY_ENABLED=false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Cassandra - Time-series storage for analytics results
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra
+    ports:
+      - "9042:9042"   # CQL native transport
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=FinancialDataCluster
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Neo4j - Graph database for relationship analytics
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j
+    ports:
+      - "7474:7474"   # HTTP
+      - "7687:7687"   # Bolt
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "password", "RETURN 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MongoDB - Document database for analytics storage
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # MongoDB
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=financial_analytics
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Mongo Express - MongoDB Web UI
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    ports:
+      - "8081:8081"   # Web UI
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://mongodb:27017
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=admin
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  # Cassandra Web - Cassandra Web UI
+  cassandra-web:
+    image: ipushc/cassandra-web:latest
+    container_name: cassandra-web
+    ports:
+      - "3000:3000"   # Web UI
+    environment:
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_PORT=9042
+    depends_on:
+      - cassandra
+    restart: unless-stopped
+
+  # Spark Analytics - Automated analytics pipeline with word-level text analysis
+  spark-analytics:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-analytics
+    depends_on:
+      - questdb
+      - cassandra
+      - mongodb
+      - neo4j
+    volumes:
+      - ./spark_analytics.py:/app/spark_analytics.py
+      - ./neo4j_graph_writer.py:/app/neo4j_graph_writer.py
+      - ./create_cassandra_table.py:/app/create_cassandra_table.py
+      - ./data/reddit:/app/data/reddit
+      - ./.env:/app/.env
+    environment:
+      - QUESTDB_HOST=questdb
+      - QUESTDB_PORT=8812
+      - QUESTDB_USER=admin
+      - QUESTDB_PASSWORD=quest
+      - CASSANDRA_HOST=cassandra
+      - CASSANDRA_PORT=9042
+      - CASSANDRA_KEYSPACE=financial_data
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DATABASE=financial_analytics
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - default
+    command: >
+      bash -c "
+        echo '==================================================';
+        echo 'FINANCIAL ANALYTICS PIPELINE - DOCKER DEPLOYMENT';
+        echo '==================================================';
+        echo 'Waiting for databases to be ready...';
+        sleep 60;
+
+        echo '[1/4] Checking Cassandra connection...';
+        until nc -z cassandra 9042; do
+          echo '  Cassandra not ready, waiting 10s...';
+          sleep 10;
+        done;
+        echo '  ✓ Cassandra ready';
+
+        echo '[2/4] Checking MongoDB connection...';
+        until nc -z mongodb 27017; do
+          echo '  MongoDB not ready, waiting 10s...';
+          sleep 10;
+        done;
+        echo '  ✓ MongoDB ready';
+
+        echo '[3/4] Checking Neo4j connection...';
+        until nc -z neo4j 7687; do
+          echo '  Neo4j not ready, waiting 10s...';
+          sleep 10;
+        done;
+        echo '  ✓ Neo4j ready';
+
+        echo '[4/4] Creating Cassandra unified schema...';
+        python /app/create_cassandra_table.py || echo '  Schema already exists or creation failed (continuing anyway)';
+
+        echo '==================================================';
+        echo 'All databases ready! Starting analytics pipeline...';
+        echo '==================================================';
+
+        while true; do
+          echo '';
+          echo '[Spark Analytics] Running Layer 3 analytics pipeline...';
+          echo '  - Arbitrage detection';
+          echo '  - Sentiment-price correlation';
+          echo '  - Word frequency analysis';
+          echo '  - Word-price correlation';
+          echo '  - Word-sentiment distribution';
+          echo '  - Volume & liquidity metrics';
+          echo '  - Volatility patterns';
+          echo '  - Cross-asset correlations';
+          echo '  - Neo4j graph relationships';
+          echo '';
+
+          python /app/spark_analytics.py;
+
+          EXIT_CODE=\$?;
+          if [ \$EXIT_CODE -eq 0 ]; then
+            echo '[Spark Analytics] ✓ Pipeline completed successfully!';
+          else
+            echo '[Spark Analytics] ✗ Pipeline failed with exit code \$EXIT_CODE';
+          fi;
+
+          echo '[Spark Analytics] Sleeping for 5 minutes before next run...';
+          sleep 300;
+        done
+      "
+
+# Persistent volumes for data
+volumes:
+  questdb_data:
+    driver: local
+  cassandra_data:
+    driver: local
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  mongodb_data:
+    driver: local
+
+networks:
+  default:
+    name: financial_pipeline
